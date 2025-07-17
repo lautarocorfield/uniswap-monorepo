@@ -1,0 +1,54 @@
+# ----------------------------------
+# 1. Archivos del sistema y editores
+# ----------------------------------
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+*.log
+
+# ----------------------------
+# 2. Dependencias y entornos
+# ----------------------------
+# Node (común para ambos proyectos)
+node_modules/
+.pnp
+.pnp.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.local
+.env*.local
+
+# ----------------------------
+# 3. Hardhat (uniswap-connection)
+# ----------------------------
+packages/uniswap-connection/artifacts/
+packages/uniswap-connection/cache/
+packages/uniswap-connection/typechain-types/
+packages/uniswap-connection/coverage/
+packages/uniswap-connection/coverage.json
+
+# ----------------------------
+# 4. Next.js (uniswap-frontend)
+# ----------------------------
+packages/uniswap-frontend/.next/
+packages/uniswap-frontend/out/
+packages/uniswap-frontend/.env
+
+# ----------------------------
+# 5. Archivos generados
+# ----------------------------
+dist/
+build/
+*.tmp
+*.bak
+
+# ----------------------------
+# 6. Configuraciones locales
+# ----------------------------
+*.env.local
+*.env.development.local
+*.env.test.local

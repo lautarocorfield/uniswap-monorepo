@@ -1,0 +1,26 @@
+{
+  "name": "uniswap-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=uniswap-frontend",
+    "test": "npm run test --workspace=uniswap-connection",
+    "coverage": "npm run coverage --workspace=uniswap-connection",
+    "compile": "npm run compile --workspace=uniswap-connection"
+    
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "uniswap-connection": "^1.0.0",
+    "uniswap-frontend": "^0.1.0"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": ""
+}
