@@ -146,5 +146,15 @@ Always verify token pair matches pool configuration
   https://uniswap-monorepo-uniswap-frontend-ecudegy92.vercel.app/
 
 ## 📊 Test Coverage
-
-![Coverage Report](./docs/coverage.png) 
+```
+-----------------|----------|----------|----------|----------|----------------|
+File             |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+-----------------|----------|----------|----------|----------|----------------|
+ contracts/      |      100 |       80 |      100 |      100 |                |
+  SimpleSwap.sol |      100 |    77.78 |      100 |      100 |                |
+  TokenA.sol     |      100 |      100 |      100 |      100 |                |
+  TokenB.sol     |      100 |      100 |      100 |      100 |                |
+-----------------|----------|----------|----------|----------|----------------|
+All files        |      100 |       80 |      100 |      100 |                |
+-----------------|----------|----------|----------|----------|----------------|
+```
