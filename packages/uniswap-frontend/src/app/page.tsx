@@ -1,6 +1,6 @@
 'use client'
-import { useEffect, useState } from "react";
-import { Dialog, Button, Card, Input, Stack, Box, Heading, SimpleGrid, Text, Flex, List, Center, Spinner, useDisclosure, Portal, Select, createListCollection, Span, ListCollection, NativeSelect, Alert } from "@chakra-ui/react";
+import { useState } from "react";
+import { Dialog, Button, Card, Input, Stack, Box, Heading, SimpleGrid, Text, Flex, List, Center, Spinner, useDisclosure, Portal, NativeSelect, Alert } from "@chakra-ui/react";
 import { Toaster, toaster } from "@/components/ui/toaster";
 import { LuCircleCheck } from "react-icons/lu";
 import { BigNumber, ethers } from "ethers";
@@ -35,7 +35,6 @@ export default function Home() {
     'tokb' : tokb,
   };
 
-  const [provider, setProvider] = useState<ethers.providers.Web3Provider | null>(null);
   const [signer, setSigner] = useState<ethers.Signer | null>(null);
   const [contract, setContract] = useState<ethers.Contract>();
   const [isConnected, setIsConnected] = useState(false);
@@ -51,6 +50,7 @@ export default function Home() {
   const priceModal = useDisclosure();
 
   const connectWallet = async () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const ethereum = (window as any).ethereum;
 
     if (!ethereum) {
@@ -92,7 +92,6 @@ export default function Home() {
         throw new Error(`Por favor, cambia a la red correcta (ChainID: ${expectedChainId})`);
       }
 
-      setProvider(provider);
       setSigner(signer);
       setUserAddress(address);
       setContract(new ethers.Contract(contractAddress, abiContract, signer));
@@ -105,6 +104,7 @@ export default function Home() {
         type: 'success',
       });
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       let errorMessage = "Hubo un error al conectar la wallet.";
       console.log("error", error);
@@ -190,6 +190,7 @@ export default function Home() {
       setAmountOutMin(amountOutMinWei);
       setSymbolToReceive(tokenOutName);
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       console.error("Error en swap:", {
         error,
@@ -258,6 +259,8 @@ export default function Home() {
         ...(prevResults || []),
         message,
       ]);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       console.error("Error en swap:", {
         error,
@@ -328,7 +331,10 @@ export default function Home() {
         type: "success",
         duration: 9000,
       })
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     }catch(error: any){
+      console.error("error", error);
       toaster.create({
         title: "Error al mintear",
         description: "Hubo un error, intente mas tarde",
